@@ -1,6 +1,7 @@
 import requests
 
 url = 'https://api.hgbrasil.com/finance?key=d58315ae'
+response = requests.get(url=url)
 if 200 <= response.status_code <= 299:
     # Success
     print('Status Code', response.status_code)
@@ -8,6 +9,3 @@ if 200 <= response.status_code <= 299:
 else:
     # Errors
     print('Status Code', response.status_code)
-
-
-response = requests.get(url=url)

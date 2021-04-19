@@ -1,33 +1,208 @@
 {"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up"],
-         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
-         "context_set": ""
+        {
+                "tag": "saudacoes",
+                "patterns": ["Como vc esta", "Tem alguem ae?", "olá", "ola", "eae"],
+                "responses": ["Ola!", "Bom ver voce denovo!", "Eae, como posso te auxiliar?"],
+                "context_set": ""
         },
-        {"tag": "goodbye",
-         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
-         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
-         "context_set": ""
+        {
+                "tag": "tchau",
+                "patterns": ["valeu", "vlw", "tchau", "to saindo", "xau", "to vazando"],
+                "responses": ["Triste ver você ir embora :(", "Conversamos depois", "Tchau!", "Vlw"],
+                "context_set": ""
         },
-        {"tag": "age",
-         "patterns": ["how old", "how old is tim", "what is your age", "how old are you", "age?"],
-         "responses": ["I am 18 years old!", "18 years young!"],
-         "context_set": ""
+        {
+                "tag": "ano",
+                "patterns": ["quantos anos vc tem", "quantos anos voce tem ronaldo", "sua idade", "qual sua idade", "idade?"],
+                "responses": ["Tenho 1 mes desde o meu nascimento", "Eu tenho 1 mes de idade"],
+                "context_set": ""
         },
-        {"tag": "name",
-         "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["You can call me Tim.", "I'm Tim!", "I'm Tim aka Tech With Tim."],
-         "context_set": ""
+        {
+                "tag": "nome",
+                "patterns": ["qual é o seu nome", "qual e o seu nome", "como eu posso te chamar", "qual é o seu nome?"],
+                "responses": ["Voce pode me chamar de RonaldoTech.", "Eu sou RonaldoTech!", "Yo soy RonalditoTiech"],
+                "context_set": ""
         },
-        {"tag": "shop",
-         "patterns": ["Id like to buy something", "whats on the menu", "what do you reccommend?", "could i get something to eat"],
-         "responses": ["We sell chocolate chip cookies for $2!", "Cookies are on the menu!"],
-         "context_set": ""
+        {
+                "tag": "faz",
+                "patterns": ["o que voce faz?", "quem é você", "quem é voce?", "quem e voce? "],
+                "responses": ["Meu nome e RonaldoTech, sou um bot que te ajuda a procurar sobre acoes e outros assuntos na bolsa de valores, quanto mais informação me passam, mais eu fico inteligente!"],
+                "context_set": ""
         },
-        {"tag": "hours",
-         "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
-         "responses": ["We are open 7am-4pm Monday-Friday!"],
-         "context_set": ""
+        {
+                "tag": "intuito",
+                "patterns": ["qual é seu intuito?", "por que voce foi criado", "criado por que", "proposito"],
+                "responses": ["Fui criado para ajudar as pessoas, eu facilito a procura de informações sobre acoes e outros assuntos na bolsa de valores!"],
+                "context_set": ""
+        },
+        {
+                "tag": "criador",
+                "patterns": ["quem é seu criador?", "quem criou voce"],
+                "responses": ["Meus criadores são o Ricardo, Gabriel e o Weiven"],
+                "context_set": ""
+        },
+        {
+                "tag": "weg",
+                "patterns": ["weg", "WEG", "WEGE3", "Weg", "WEGE"],
+                "responses": ["Aqui algumas informacoes sobre a Weg!"],
+                "context_set": ""
+        },
+        {
+                "tag": "banco inter",
+                "patterns": ["banco inter", "Banco Inter", "bidi4"],
+                "responses": ["Aqui algumas informacoes sobre o Banco Inter!"],
+                "context_set": ""
+        },
+        {
+                "tag": "itau",
+                "patterns": ["Itau", "itub4"],
+                "responses": ["Aqui algumas informacoes sobre o Itau"],
+                "context_set": ""
+        },
+        {
+                "tag": "azul", 
+                "patterns": ["Azul", "azul", "azul4"],
+                "responses": ["Aqui algumas informacoes sobre a Azul"],
+                "context_set": ""
+        },
+        {
+                "tag": "centauro", 
+                "patterns": ["Centauro", "centauro" ],
+                "responses": ["Aqui algumas informacoes sobre a Centauro"],
+                "context_set": ""
+        },
+        {
+                "tag": "cielo", 
+                "patterns": ["Cielo", "cielo", "ciel3"],
+                "responses": ["Aqui algumas informacoes sobre a Cielo"],
+                "context_set": ""
+        },
+        {
+                "tag": "cogna", 
+                "patterns": ["Cogna", "cogna", "cogn3"],
+                "responses": ["Aqui algumas informacoes sobre a Cogna"],
+                "context_set": ""
+        },
+        {
+                "tag": "enjoei", 
+                "patterns": ["Enjoei", "enjoei"],
+                "responses": ["Aqui algumas informacoes sobre a Enjoei"],
+                "context_set": ""
+        },
+        {
+                "tag": "fleury", 
+                "patterns": ["Fleury", "fleury"],
+                "responses": ["Aqui algumas informacoes sobre a Fleury"],
+                "context_set": ""
+        },
+        {
+                "tag": "grendene", 
+                "patterns": ["Grendene", "grendene"],
+                "responses": ["Aqui algumas informacoes sobre a Grendene"],
+                "context_set": ""
+        },
+        {
+                "tag": "americanas", 
+                "patterns": ["Americanas", "americanas", "lame4"],
+                "responses": ["Aqui algumas informacoes sobre a Americanas"],
+                "context_set": ""
+        },
+        {
+                "tag": "linx", 
+                "patterns": ["Linx", "linx"],
+                "responses": ["Aqui algumas informacoes sobre a Linx"],
+                "context_set": ""
+        },
+        {
+                "tag": "locaweb", 
+                "patterns": ["Locaweb", "localweb"],
+                "responses": ["Aqui algumas informacoes sobre a Locaweb"],
+                "context_set": ""
+        },
+        {
+                "tag": "maxi renda",
+                "patterns": ["Maxi Renda", "maxi renda"],
+                "responses": ["Aqui algumas informacoes sobre a Maxi Renda"],
+                "context_set": ""
+            
+        },
+        {
+                "tag": "marcopolo", 
+                "patterns": ["Marcopolo", "marcopolo"],
+                "responses": ["Aqui algumas informacoes sobre a Marcopolo"],
+                "context_set": ""
+        },
+        {
+                "tag": "neogrid", 
+                "patterns": ["Neogrid", "neogrid"],
+                "responses": ["Aqui algumas informacoes sobre a Neogrid"],
+                "context_set": ""
+        },
+        {
+                "tag": "oibr3",
+                "patterns": ["oibr3", "Oi oibr3"],
+                "responses": ["Aqui algumas informacoes sobre o Oib3"],
+                "context_set": ""
+        },
+        {
+                "tag": "oibr4",
+                "patterns": ["oibr4", "Oi oibr4"],
+                "responses": ["Aqui algumas informacoes sobre o Oibr4"],
+                "context_set": ""
+        },
+        {
+                "tag": "pretorio",
+                "patterns": ["pretorio", "Pretorio"],
+                "responses": ["Aqui algumas informacoes sobre o Pretorio"],
+                "context_set": ""
+        },
+        {
+                "tag": "pine",
+                "patterns": ["pine", "banco pine"],
+                "responses": ["Aqui algumas informacoes sobre o Banco Pine"],
+                "context_set": ""
+        },
+        {
+                "tag": "positivo",
+                "patterns": ["positivo", "Positivo tecnologia"],
+                "responses": ["Aqui algumas informacoes sobre o Positivo"],
+                "context_set": ""
+        },
+        {
+                "tag": "taurus",
+                "patterns": ["taurus", "Taurus Armas"],
+                "responses": ["Aqui algumas informacoes sobre o Taurus"],
+                "context_set": ""
+        },
+        {
+                "tag": "via varejo",
+                "patterns": ["via varejo", "Via Varejo"],
+                "responses": ["Aqui algumas informacoes sobre o Via Varejo"],
+                "context_set": ""
+        },
+        {
+                "tag": "vulcabras",
+                "patterns": ["vulcabras", "VulcaBras"],
+                "responses": ["Aqui algumas informacoes sobre o VulcaBras"],
+                "context_set": ""
+        },
+        {
+                "tag": "vale",
+                "patterns": ["vale", "Vale"],
+                "responses": ["Aqui algumas informacoes sobre o Vale"],
+                "context_set": ""
+        },
+        {
+                "tag": "opcoes",
+                "patterns": ["menu", "ajuda", "help", "opcoes", "opcao"],
+                "responses": ["Aqui estão as opcoes de ajuda!"],
+                "context_set": ""
+        },
+        {
+                "tag": "baixa",
+                "patterns": [""],
+                "responses": [""],
+                "context_set": ""
         }
    ]
 }

@@ -1,0 +1,112 @@
+{
+    "intents":[
+        {
+            "tag": "banco inter", 
+            "code": "BIDI4"
+        },
+        {
+            "tag": "weg", 
+            "code": "WEGE3"
+        },
+        {
+            "tag": "ambev", 
+            "code": "ABEV3"
+        }, 
+        {
+            "tag": "itausa", 
+            "code": "ITSA4"
+        },
+        {
+            "tag": "itau", 
+            "code": "ITUB4"
+        },
+        {
+            "tag": "azul", 
+            "code": "AZUL4"
+        },
+        {
+            "tag": "centauro", 
+            "code": "SBFG3"
+        },
+        {
+            "tag": "cielo", 
+            "code": "CIEL3"
+        },
+        {
+            "tag": "cogna", 
+            "code": "COGN3"
+        },
+        {
+            "tag": "enjoei", 
+            "code": "ENJU3"
+        },
+        {
+            "tag": "fleury", 
+            "code": "FLRY3"
+        },
+        {
+            "tag": "grendene", 
+            "code": "GRND3"
+        },
+        {
+            "tag": "americanas", 
+            "code": "LAME4"
+        },
+        {
+            "tag": "linx", 
+            "code": "LINX3"
+        },
+        {
+            "tag": "locaweb", 
+            "code": "LWSA3"
+        },
+        {
+            "tag": "maxi renda", 
+            "code": "MXRF11"
+        },
+        {
+            "tag": "marcopolo", 
+            "code": "POMO4"
+        },
+        {
+            "tag": "neogrid", 
+            "code": "NGRD3"
+        },
+        {
+            "tag": "oibr3", 
+            "code": "OIBR3"
+        },
+        {
+            "tag": "oibr4", 
+            "code": "OIBR3"
+        },
+        {
+            "tag": "petrorio", 
+            "code": "PRIO3"
+        },
+        {
+            "tag": "pine", 
+            "code": "PINE4"
+        },
+        {
+            "tag": "positivo", 
+            "code": "POSI3"
+        },
+        {
+            "tag": "taurus", 
+            "code": "TASA4"
+        },
+        {
+            "tag": "via varejo", 
+            "code": "VVAR3"
+        },
+        {
+            "tag": "vulcabras", 
+            "code": "VULC3"
+        },
+        {
+            "tag": "vale", 
+            "code": "VALE3"
+        }
+    ]
+}
