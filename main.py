@@ -1,10 +1,7 @@
-# pip install nltk
-# pip install tensorflow
-# pip install numpy
-# pip install tflearn
+# -*- coding: utf-8 -*-
 
-# conda activate chatbot_ia
-
+from nltk import tokenize
+import os
 import pickle
 import json
 import requests
@@ -13,20 +10,29 @@ import tensorflow
 import tflearn
 import numpy
 import nltk
+import webbrowser
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-from nltk import tokenize 
-import os
 
 KEY = 'd58315ae'
 URL = 'https://api.hgbrasil.com/finance/'
 
+KEY_NEWS = '1dda3284b91a41eb96be800b191f289d'
+# URL_NEWS = 'https://newsapi.org/v2/top-headlines?country=br&category=business&apiKey='
+# ?country=pt&category=business&q=bitcoin&apiKey=1dda3284b91a41eb96be800b191f289d
+URL_NEWS = 'https://newsapi.org/v2/top-headlines'
+
+
 with open("intents.json") as file:
-	data = json.load(file)
+    data = json.load(file)
 
 
 with open("companies.json") as file:
-	companies = json.load(file)
+    companies = json.load(file)
+
+
+with open("menu.json") as file:
+    menu = json.load(file)
 
 
 try:
@@ -40,7 +46,7 @@ except:
 
     for intent in data["intents"]:
         for pattern in intent["patterns"]:
-        	# wrds = nltk.word_tokenize(pattern, language='portuguese', preserve_line=False)
+            # wrds = nltk.word_tokenize(pattern, language='portuguese', preserve_line=False)
             wrds = tokenize.word_tokenize(pattern, language='portuguese')
             words.extend(wrds)
             docs_x.append(wrds)
@@ -99,13 +105,14 @@ print("Caso o bot nunca tenha sido treinado escreva sim, caso o contrario escrev
 train_model_inp = input("Deseja Treinar o modelo ? (s/n): ")
 
 if train_model_inp.lower() == "s" or train_model_inp.lower() == "sim":
-    model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
+    model.fit(training, output, n_epoch=50000, batch_size=8, show_metric=True)
     model.save("model.tflearn")
 else:
     try:
         model.load("model.tflearn")
     except:
-        model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
+        model.fit(training, output, n_epoch=50000,
+                  batch_size=8, show_metric=True)
         model.save("model.tflearn")
 
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -132,7 +139,33 @@ def verify_company(word):
             return intent["code"]
 
     return ""
-            
+
+
+def verify_command(command):
+    option = ''
+    arg = ''
+    param = ''
+
+    for intent in menu["options"]:
+        x = command.split()
+
+        if intent["command"] == x[0]:
+            option = intent["command"]
+
+        if intent["option"] == x[1]:
+            arg = intent["option"]
+
+        if x[1] != '':
+            param = x[1]
+
+    if option == 'list':
+        if arg == '-a':
+            return companies["intents"]
+        if arg == '-c':
+            return info_bolsa(param)
+    else:
+        return ""
+
 
 def info_bolsa(code):
     url = f'{URL}stock_price/?key={KEY}&symbol={code}'
@@ -149,7 +182,7 @@ def info_bolsa(code):
 
 
 def format_data(data, company_symbol):
-    aux =  data[company_symbol.upper()]
+    aux = data[company_symbol.upper()]
     data_formatted = f"Código: {aux['symbol']} \n" \
                      f"Nome: {aux['name']} \n" \
                      f"Preço: {aux['price']} \n" \
@@ -166,10 +199,32 @@ def help_options():
     return data
 
 
+def get_financial_news():
+    # url = f'{URL_NEWS}?country=pt&category=business&q={keyword}&apiKey={KEY_NEWS}'
+    url = f'{URL_NEWS}?country=br&category=business&apiKey={KEY_NEWS}'
+    response = requests.get(url=url)
+    response = response.json()
+    
+    status = response["status"]
+    articles = response["articles"]
+    # count_articles = response["totalResults"]
+    random_number = random.randint(0, len(articles))
+    
+    if status == "ok":
+        print(f"RonaldoTech: {articles[random_number]['title']}")
+        inp = input("RonaldoTech: Abrir link da noticia? (s/n) ")
+        if inp.lower() == "s" or inp.lower() == "sim":
+            url_site = articles[random_number]['url']
+            webbrowser.open(url_site,new=2)
+
+    return ''
+
+
 def chat():
     print("Comece a escrever! (Para sair digite 'sair')")
     while True:
         inp = input("Você: ")
+        option = ""
         if inp.lower() == "sair":
             break
 
@@ -185,33 +240,43 @@ def chat():
             company_code = verify_company(tag)
             # print(company_code)
 
+            if inp.lower().startswith("list"):
+                option = verify_command(inp)
+                print(option)
+
             responses = ""
             company_info = ""
             company_data = ""
+
             if company_code != "":
                 company_info = info_bolsa(company_code)
 
             if company_info != "":
-                company_data = format_data(company_info["results"], company_code)
+                company_data = format_data(
+                    company_info["results"], company_code)
 
             for tg in data["intents"]:
                 if tg["tag"] == tag:
                     responses = tg["responses"]
-            
-            if responses != "":
-                print(f"RonaldoTech: {random.choice(responses)}")
 
-                if tag == "opcoes":
+            if responses != "" and option == "":
+                print(f"RonaldoTech: {random.choice(responses)}")
+                if tag == "menu":
                     print(help_options())
+
+                if tag == "noticia":
+                    responses = get_financial_news()
 
                 if company_data != "":
                     print("-"*40)
                     print(company_data)
                     print("-"*40)
             else:
-                print(f"RonaldoTech: O que você disse?")
-            
+                if option != "":
+                    print(f"RonaldoTech: O que você disse?")
+                    
         else:
             print("RonaldoTech: Tem alguem ai ?")
-            
+
+
 chat()

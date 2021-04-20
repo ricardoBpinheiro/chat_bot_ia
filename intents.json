@@ -26,7 +26,7 @@
         {
                 "tag": "faz",
                 "patterns": ["o que voce faz?", "quem é você", "quem é voce?", "quem e voce? "],
-                "responses": ["Meu nome e RonaldoTech, sou um bot que te ajuda a procurar sobre acoes e outros assuntos na bolsa de valores, quanto mais informação me passam, mais eu fico inteligente!"],
+                "responses": ["Meu nome e RonaldoTech, sou um bot que te ajuda a procurar sobre acoes e outros assuntos na bolsa de valores, quanto mais informacao me passam, mais eu fico inteligente!"],
                 "context_set": ""
         },
         {
@@ -37,8 +37,20 @@
         },
         {
                 "tag": "criador",
-                "patterns": ["quem é seu criador?", "quem criou voce"],
-                "responses": ["Meus criadores são o Ricardo, Gabriel e o Weiven"],
+                "patterns": ["quem é seu criador?", "quem criou voce", "quem sao seus criadores"],
+                "responses": ["Meus criadores sao o Ricardo, Gabriel e o Weiven"],
+                "context_set": ""
+        },
+        {
+                "tag": "menu",
+                "patterns": ["menu", "abrir menu", "o que tem no menu", "Menu", "MENU"],
+                "responses": ["Aqui estão as opcoes de ajuda!"],
+                "context_set": ""
+        },
+        {
+                "tag": "noticia",
+                "patterns": ["noticias", "noticias sobre", "me de noticias", "Noticias"],
+                "responses": ["Tenho uma noticia para voce"],
                 "context_set": ""
         },
         {
@@ -67,7 +79,7 @@
         },
         {
                 "tag": "centauro", 
-                "patterns": ["Centauro", "centauro" ],
+                "patterns": ["Centauro", "centauro"],
                 "responses": ["Aqui algumas informacoes sobre a Centauro"],
                 "context_set": ""
         },
@@ -193,15 +205,9 @@
                 "context_set": ""
         },
         {
-                "tag": "opcoes",
-                "patterns": ["menu", "ajuda", "help", "opcoes", "opcao"],
-                "responses": ["Aqui estão as opcoes de ajuda!"],
-                "context_set": ""
-        },
-        {
                 "tag": "baixa",
-                "patterns": [""],
-                "responses": [""],
+                "patterns": ["baixa do dia", "acoes em baixa", "baixa de acoes"],
+                "responses": ["Aqui algumas informacoes sobre as baixas do dia"],
                 "context_set": ""
         }
    ]

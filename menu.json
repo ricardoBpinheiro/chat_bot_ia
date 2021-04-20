@@ -1,0 +1,9 @@
+{
+    "options":[
+        {
+            "command": "list",
+            "option": "-a",
+            "option1": "-c"
+        }
+    ]
+}
