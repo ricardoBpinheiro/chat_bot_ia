@@ -30,3 +30,8 @@ Variação: -1.6%<br>
 Capital de Mercado: 161702.0<br>
 Ultima atualização: 2021-04-18 20:12:19<br>
 ----------------------------------------<br>
+
+Você: Me mostre uma noticia<br>
+RonaldoTech: Tenho uma noticia para voce<br>
+RonaldoTech: Retomada da economia inclui leilões, diz ministro de Minas e Energia - Band Jornalismo<br>
+RonaldoTech: Abrir link da noticia? (s/n)<br>
