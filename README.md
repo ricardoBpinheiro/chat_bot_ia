@@ -2,6 +2,12 @@
 Chat bot utilizando Machine Learning, especifico para respostas da bolsa de valores, ações, fundos e nóticias sobre o mundo financeiro.
 
 <strong>Como instalar e rodar o programa:</strong><br><br>
+°Instalar pacotes necessários:<br>
+pip install nltk<br>
+pip install tensorflow<br>
+pip install numpy<br>
+pip install tflearn<br>
+
 °Método 1:<br>
 - conda create -n chat_bot_ia<br>
 - conda activate chat_bot_ia<br>
